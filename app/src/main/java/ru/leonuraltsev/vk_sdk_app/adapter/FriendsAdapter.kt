@@ -21,6 +21,17 @@ class FriendsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         filter(query = "")
     }
 
+    fun setupOnlineFriends(friendsList: ArrayList<VKUser>){
+        mSourceList.clear()
+        friendsList.forEach{
+            if(it.isOnline == 1){
+                mSourceList.add(it)
+            }
+        }
+        filter(query = "")
+    }
+
+
     fun filter(query: String) {
         mFriendsList.clear()
         var firstAndSurName : String

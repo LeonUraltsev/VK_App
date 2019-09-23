@@ -6,9 +6,10 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import ru.leonuraltsev.vk_sdk_app.models.VKUser
 
 @StateStrategyType(value = AddToEndSingleStrategy::class)
-interface FriendsView : MvpView {
+interface FriendsFragmentView : MvpView{
     fun startLoading()
     fun endLoading()
-    fun initTabs()
-    fun initToolbar()
+    fun showError(textResource:Int)
+    fun setupEmptyList()
+    fun setupFriendsList(friendsList: ArrayList<VKUser>)
 }

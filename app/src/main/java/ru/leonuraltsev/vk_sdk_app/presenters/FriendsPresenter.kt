@@ -13,20 +13,8 @@ import ru.leonuraltsev.vk_sdk_app.views.FriendsView
 class FriendsPresenter : MvpPresenter<FriendsView>() {
     fun loadFriends() {
         viewState.startLoading()
-        FriendsProvider(presenter = this).loadFriends()
+        viewState.initTabs()
+        viewState.initToolbar()
     }
 
-    fun friendsLoaded(friendsList: ArrayList<VKUser>) {
-        viewState.endLoading()
-        if (friendsList.size == 0) {
-            viewState.setupEmptyList()
-            viewState.showError(textResource = R.string.tv_friends_no_item)
-        } else {
-            viewState.setupFriendsList(friendsList = friendsList)
-        }
-    }
-
-    fun showError(error: VKApiExecutionException) {
-        viewState.showError(R.string.list_error_notification)
-    }
 }

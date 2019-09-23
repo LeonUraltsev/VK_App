@@ -5,10 +5,8 @@ import android.os.Handler
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.vk.api.sdk.VK
-import com.vk.api.sdk.VKApiCallback
 import com.vk.api.sdk.auth.VKAccessToken
 import com.vk.api.sdk.auth.VKAuthCallback
-import com.vk.api.sdk.exceptions.VKApiExecutionException
 import ru.leonuraltsev.vk_sdk_app.R
 import ru.leonuraltsev.vk_sdk_app.views.LoginView
 
@@ -45,4 +43,7 @@ class LoginPresenter : MvpPresenter<LoginView>() {
         }
         return true
     }
+
+
+
 }

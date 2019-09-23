@@ -7,10 +7,11 @@ import com.vk.api.sdk.exceptions.VKApiExecutionException
 
 import ru.leonuraltsev.vk_sdk_app.models.VKFriendsRequest
 import ru.leonuraltsev.vk_sdk_app.models.VKUser
+import ru.leonuraltsev.vk_sdk_app.presenters.FriendsFragmentPresenter
 import ru.leonuraltsev.vk_sdk_app.presenters.FriendsPresenter
 
 
-class FriendsProvider(var presenter : FriendsPresenter) {
+class FriendsProvider(var presenter : FriendsFragmentPresenter) {
 
     fun loadFriends(){
         VK.execute(VKFriendsRequest(),object : VKApiCallback<List<VKUser>>{

@@ -19,7 +19,6 @@ import ru.leonuraltsev.vk_sdk_app.views.LoginView
 
 
 class LoginActivity : MvpAppCompatActivity(),LoginView {
-    private val TAG :String = LoginActivity::class.java.simpleName
 
     private lateinit var txtLoginHello : TextView
     private lateinit var btnLogin : Button
@@ -35,15 +34,9 @@ class LoginActivity : MvpAppCompatActivity(),LoginView {
         txtLoginHello = findViewById(R.id.txt_login_hello)
         btnLogin = findViewById(R.id.btn_login)
         cpvLogin = findViewById(R.id.cpv_login)
-
         btnLogin.setOnClickListener {
             VK.login(this@LoginActivity, listOf(VKScope.FRIENDS))
-
         }
-
-
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
